@@ -83,6 +83,14 @@ class DigitalClock{
             // The format is HH
             hours = hours.toString().split('');
 
+            // The range [0-9] is only a digit of length, needed two digits
+            // of length.
+            if (hours.length === 1) {
+                // If the length of arrays is of one (range [0-9]) added a '0' to
+                // begin of array
+                hours.unshift('0');
+            }
+
             // The method getMinutes return an integer number, between 0 and 59,
             // representing the minutes in the given date according to local
             // time.
