@@ -139,7 +139,7 @@ class DigitalClock{
             weekdays.removeClass('active').eq(dow).addClass('active');
 
             // Set the am/pm text:
-            ampm.text(now[7]+now[8]);
+            ampm.text(currentDate.getHours() >= 12 ? 'PM' : 'AM');
 
             // Schedule this function to be run again in 1 sec
             setTimeout(update_time, 1000);
