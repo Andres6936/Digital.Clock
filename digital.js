@@ -59,12 +59,9 @@ class DigitalClock{
 
         (function update_time() {
 
-            // Use moment.js to output the current time as a string
-            // hh is for the hours in 12-hour format,
+            // Get the current time as a array of strings
+            // The hours in 12-hour format,
             // mm - minutes, ss-seconds (all with leading zeroes),
-            // d is for day of week and A is for AM/PM
-
-            const now = moment().format("hhmmssdA");
 
             const currentDate = new Date();
 
@@ -123,20 +120,10 @@ class DigitalClock{
             digits.s2.attr('class', digit_to_name[seconds[1]]);
 
             // The library returns Sunday as the first day of the week.
-            // Stupid, I know. Lets shift all the days one position down,
-            // and make Sunday last
-
-            let dow = now[6];
-            dow--;
-
-            // Sunday!
-            if (dow < 0) {
-                // Make it last
-                dow = 6;
-            }
-
-            // Mark the active day of the week
-            weekdays.removeClass('active').eq(dow).addClass('active');
+            // Lets shift all the days one position down, and make
+            // Sunday last.
+            // Mark the active day of the week.
+            weekdays.removeClass('active').eq(currentDate.getDay() - 1).addClass('active');
 
             // Set the am/pm text:
             ampm.text(currentDate.getHours() >= 12 ? 'PM' : 'AM');
