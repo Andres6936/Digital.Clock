@@ -49,15 +49,15 @@ class DigitalClock{
         const weekday_names = 'MON TUE WED THU FRI SAT SUN'.split(' '),
             weekday_holder = clock.find('.weekdays');
 
-        $.each(weekday_names, function(){
-            weekday_holder.append('<span>' + this + '</span>');
-        });
+        for (const weekday of weekday_names) {
+            weekday_holder.append('<span>' + weekday + '</span>');
+        }
 
         const weekdays = clock.find('.weekdays span');
 
         // Run a timer every second and update the clock
 
-        (function update_time(){
+        (function update_time() {
 
             // Use moment.js to output the current time as a string
             // hh is for the hours in 12-hour format,
