@@ -22,9 +22,8 @@ class DigitalClock{
 
         const digit_holder = clock.find('.digits');
 
-        $.each(positions, function(){
-
-            if(this === ':'){
+        for (const position of positions) {
+            if(position === ':'){
                 digit_holder.append('<div class="dots">');
             }
             else{
@@ -36,13 +35,12 @@ class DigitalClock{
                 }
 
                 // Set the digits as key:value pairs in the digits object
-                digits[this] = pos;
+                digits[position] = pos;
 
                 // Add the digit elements to the page
                 digit_holder.append(pos);
             }
-
-        });
+        }
 
         // Add the weekday names
 
