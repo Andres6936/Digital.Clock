@@ -66,12 +66,20 @@ class DigitalClock{
 
             const now = moment().format("hhmmssdA");
 
-            digits.h1.attr('class', digit_to_name[now[0]]);
-            digits.h2.attr('class', digit_to_name[now[1]]);
-            digits.m1.attr('class', digit_to_name[now[2]]);
-            digits.m2.attr('class', digit_to_name[now[3]]);
-            digits.s1.attr('class', digit_to_name[now[4]]);
-            digits.s2.attr('class', digit_to_name[now[5]]);
+            let currentDate = new Date();
+
+            let hours = currentDate.getHours().toString().split('');
+            let minutes = currentDate.getMinutes().toString().split('');
+            let seconds = currentDate.getSeconds().toString().split('');
+
+            digits.h1.attr('class', digit_to_name[hours[0]]);
+            digits.h2.attr('class', digit_to_name[hours[1]]);
+
+            digits.m1.attr('class', digit_to_name[minutes[0]]);
+            digits.m2.attr('class', digit_to_name[minutes[1]]);
+
+            digits.s1.attr('class', digit_to_name[seconds[0]]);
+            digits.s2.attr('class', digit_to_name[seconds[1]]);
 
             // The library returns Sunday as the first day of the week.
             // Stupid, I know. Lets shift all the days one position down,
@@ -81,7 +89,7 @@ class DigitalClock{
             dow--;
 
             // Sunday!
-            if(dow < 0){
+            if (dow < 0) {
                 // Make it last
                 dow = 6;
             }
