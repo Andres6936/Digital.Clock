@@ -3,7 +3,6 @@ class DigitalClock{
         // Cache some selectors
 
         const clock = $('#clock'),
-            alarm = clock.find('.alarm'),
             ampm = clock.find('.ampm');
 
         // Map digits to their names (this will be an array)
