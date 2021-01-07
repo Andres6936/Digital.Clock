@@ -66,11 +66,52 @@ class DigitalClock{
 
             const now = moment().format("hhmmssdA");
 
-            let currentDate = new Date();
+            const currentDate = new Date();
 
-            let hours = currentDate.getHours().toString().split('');
-            let minutes = currentDate.getMinutes().toString().split('');
-            let seconds = currentDate.getSeconds().toString().split('');
+            // The method getHours return an integer number, between 0 and 23,
+            // representing the hour for the given date according to local
+            // time.
+            let hours = currentDate.getHours();
+            // Convert from format 24 hours to format of 12 hours.
+            // Reference: https://stackoverflow.com/a/8888498
+            hours = hours % 12;
+
+            // Case special, the operation: 12 mod 12 is equals to 0, thus
+            // we must manage this case, this operation represent the
+            // hours : 12 pm.
+            if (hours === 0) {
+                hours = 12;
+            }
+
+            // The format is HH
+            hours = hours.toString().split('');
+
+            // The method getMinutes return an integer number, between 0 and 59,
+            // representing the minutes in the given date according to local
+            // time.
+            // The format is MM.
+            const minutes = currentDate.getMinutes().toString().split('');
+
+            // The range [0-9] is only a digit of length, needed two digits
+            // of length.
+            if (minutes.length === 1) {
+                // If the length of arrays is of one (range [0-9]) added a '0' to
+                // begin of array
+                minutes.unshift('0');
+            }
+
+            // The method getMinutes return an integer number, between 0 and 59,
+            // representing the seconds in the given date according to local time.
+            // The format is SS.
+            const seconds = currentDate.getSeconds().toString().split('');
+
+            // The range [0-9] is only a digit of length, needed two digits
+            // of length.
+            if (seconds.length === 1) {
+                // If the length of arrays is of one (range [0-9]) added a '0' to
+                // begin of array
+                seconds.unshift('0');
+            }
 
             digits.h1.attr('class', digit_to_name[hours[0]]);
             digits.h2.attr('class', digit_to_name[hours[1]]);
