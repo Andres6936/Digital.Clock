@@ -11,7 +11,7 @@ class DigitalClock{
         // This object will hold the digit elements
         const digits = {};
 
-        // Positions for the hours, minutes, and seconds
+        // @type {[string]} Positions for the hours, minutes, and seconds
         const positions = [
             'h1', 'h2', ':', 'm1', 'm2', ':', 's1', 's2'
         ];
@@ -23,7 +23,10 @@ class DigitalClock{
 
         for (const position of positions) {
             if(position === ':'){
-                digit_holder.append('<div class="dots">');
+                let dots = document.createElement('div');
+                dots.classList.add('dots');
+
+                digit_holder.append(dots.outerHTML);
             }
             else{
 
