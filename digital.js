@@ -2,36 +2,36 @@ $(function(){
 
     // Cache some selectors
 
-    var clock = $('#clock'),
+    const clock = $('#clock'),
         alarm = clock.find('.alarm'),
         ampm = clock.find('.ampm');
 
     // Map digits to their names (this will be an array)
-    var digit_to_name = 'zero one two three four five six seven eight nine'.split(' ');
+    const digit_to_name = 'zero one two three four five six seven eight nine'.split(' ');
 
     // This object will hold the digit elements
-    var digits = {};
+    const digits = {};
 
     // Positions for the hours, minutes, and seconds
-    var positions = [
+    const positions = [
         'h1', 'h2', ':', 'm1', 'm2', ':', 's1', 's2'
     ];
 
     // Generate the digits with the needed markup,
     // and add them to the clock
 
-    var digit_holder = clock.find('.digits');
+    const digit_holder = clock.find('.digits');
 
     $.each(positions, function(){
 
-        if(this == ':'){
+        if(this === ':'){
             digit_holder.append('<div class="dots">');
         }
         else{
 
-            var pos = $('<div>');
+            const pos = $('<div>');
 
-            for(var i=1; i<8; i++){
+            for(let i=1; i<8; i++){
                 pos.append('<span class="d' + i + '">');
             }
 
@@ -46,14 +46,14 @@ $(function(){
 
     // Add the weekday names
 
-    var weekday_names = 'MON TUE WED THU FRI SAT SUN'.split(' '),
+    const weekday_names = 'MON TUE WED THU FRI SAT SUN'.split(' '),
         weekday_holder = clock.find('.weekdays');
 
     $.each(weekday_names, function(){
         weekday_holder.append('<span>' + this + '</span>');
     });
 
-    var weekdays = clock.find('.weekdays span');
+    const weekdays = clock.find('.weekdays span');
 
     // Run a timer every second and update the clock
 
@@ -64,7 +64,7 @@ $(function(){
         // mm - minutes, ss-seconds (all with leading zeroes),
         // d is for day of week and A is for AM/PM
 
-        var now = moment().format("hhmmssdA");
+        const now = moment().format("hhmmssdA");
 
         digits.h1.attr('class', digit_to_name[now[0]]);
         digits.h2.attr('class', digit_to_name[now[1]]);
@@ -77,7 +77,7 @@ $(function(){
         // Stupid, I know. Lets shift all the days one position down,
         // and make Sunday last
 
-        var dow = now[6];
+        let dow = now[6];
         dow--;
 
         // Sunday!
