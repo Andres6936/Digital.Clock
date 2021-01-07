@@ -23,7 +23,7 @@ class DigitalClock{
 
         for (const position of positions) {
             if(position === ':'){
-                let dots = document.createElement('div');
+                const dots = document.createElement('div');
                 dots.classList.add('dots');
 
                 digit_holder.append(dots.outerHTML);
