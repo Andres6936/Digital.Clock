@@ -53,6 +53,10 @@ class DigitalClock{
         // first and unique element with item(0).
         const weekday_holder = document.getElementsByClassName('weekdays').item(0);
 
+        console.assert(weekday_names[0] === "Sunday",
+            "The specification has not been met, the first day of the week must be Sunday.\n" +
+            "The current value for the first day of week is %s", weekday_names[0]);
+
         for (const weekday of weekday_names) {
             const weekDaySpan = document.createElement('span');
             // Only needed the three first letters and that the string be upper case.
