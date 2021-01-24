@@ -47,7 +47,7 @@ class DigitalClock{
         // Add the weekday names
 
         // @type {[string]} Store the days of week. Is important that the
-        // first day of week will be Sunday.
+        // first day of week will be Sunday (Specified for Date.getDay()).
         const weekday_names = 'Sunday Monday Tuesday Wednesday Thursday Friday Saturday'.split(' ');
         // Only exist a unique element with the 'weekdays' class. Get the
         // first and unique element with item(0).
