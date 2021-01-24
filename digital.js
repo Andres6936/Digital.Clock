@@ -65,8 +65,6 @@ class DigitalClock{
             weekday_holder.appendChild(weekDaySpan);
         }
 
-        const weekdays = clock.find('.weekdays span');
-
         // Run a timer every second and update the clock
 
         (function update_time() {
