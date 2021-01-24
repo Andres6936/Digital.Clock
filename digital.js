@@ -138,7 +138,9 @@ class DigitalClock{
 
         // Switch the theme
 
-        $('a.button').click(function () {
+        // Get the first element with the 'button' class.
+        const buttonSwitchTheme = document.getElementsByClassName('button').item(0);
+        buttonSwitchTheme.addEventListener('click', () => {
             clock.toggleClass('light dark');
         });
     }
