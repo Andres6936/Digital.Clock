@@ -163,10 +163,10 @@ class DigitalClock{
             // Added a '0' to begin of array.
             digits.unshift('0')
             return digits;
-        } else {
-            // Return without changes.
-            return digits;
         }
+
+        // Return without changes.
+        return digits;
     }
 }
 
