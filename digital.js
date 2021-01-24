@@ -46,11 +46,17 @@ class DigitalClock{
 
         // Add the weekday names
 
-        const weekday_names = 'MON TUE WED THU FRI SAT SUN'.split(' '),
-            weekday_holder = clock.find('.weekdays');
+        // @type {[string]} Store the days of week.
+        const weekday_names = 'Sunday Monday Tuesday Wednesday Thursday Friday Saturday'.split(' ');
+        // Only exist a unique element with the 'weekdays' class. Get the first and unique element with item(0).
+        const weekday_holder = document.getElementsByClassName('weekdays').item(0);
 
         for (const weekday of weekday_names) {
-            weekday_holder.append('<span>' + weekday + '</span>');
+            const weekDaySpan = document.createElement('span');
+            // Only needed the three first letters and that the string be upper case.
+            weekDaySpan.innerText = weekday.substr(0, 3).toUpperCase();
+
+            weekday_holder.appendChild(weekDaySpan);
         }
 
         const weekdays = clock.find('.weekdays span');
@@ -127,11 +133,15 @@ class DigitalClock{
             digits.s1.attr('class', digit_to_name[seconds[0]]);
             digits.s2.attr('class', digit_to_name[seconds[1]]);
 
-            // The library returns Sunday as the first day of the week.
-            // Lets shift all the days one position down, and make
-            // Sunday last.
             // Mark the active day of the week.
-            weekdays.removeClass('active').eq(currentDate.getDay() - 1).addClass('active');
+            weekday_holder.querySelectorAll('span').forEach((value, index) => {
+                // The method getDay returns the day of the week for the
+                // specified date according to local time, where 0 represents
+                // Sunday, 1 for Monday, 2 for Tuesday, and so on.
+                if (index === currentDate.getDay()) {
+                    value.classList.add('active');
+                }
+            });
 
             // Set the am/pm text:
             ampm.text(currentDate.getHours() >= 12 ? 'PM' : 'AM');
