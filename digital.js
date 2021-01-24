@@ -94,41 +94,20 @@ class DigitalClock{
 
             // The format is HH
             hours = hours.toString().split('');
-
-            // The range [0-9] is only a digit of length, needed two digits
-            // of length.
-            if (hours.length === 1) {
-                // If the length of arrays is of one (range [0-9]) added a '0' to
-                // begin of array
-                hours.unshift('0');
-            }
+            hours = DigitalClock.unshiftWithZeros(hours);
 
             // The method getMinutes return an integer number, between 0 and 59,
             // representing the minutes in the given date according to local
             // time.
             // The format is MM.
-            const minutes = currentDate.getMinutes().toString().split('');
-
-            // The range [0-9] is only a digit of length, needed two digits
-            // of length.
-            if (minutes.length === 1) {
-                // If the length of arrays is of one (range [0-9]) added a '0' to
-                // begin of array
-                minutes.unshift('0');
-            }
+            let minutes = currentDate.getMinutes().toString().split('');
+            minutes = DigitalClock.unshiftWithZeros(minutes);
 
             // The method getMinutes return an integer number, between 0 and 59,
             // representing the seconds in the given date according to local time.
             // The format is SS.
-            const seconds = currentDate.getSeconds().toString().split('');
-
-            // The range [0-9] is only a digit of length, needed two digits
-            // of length.
-            if (seconds.length === 1) {
-                // If the length of arrays is of one (range [0-9]) added a '0' to
-                // begin of array
-                seconds.unshift('0');
-            }
+            let seconds = currentDate.getSeconds().toString().split('');
+            seconds = DigitalClock.unshiftWithZeros(seconds);
 
             digits.h1.attr('class', digit_to_name[hours[0]]);
             digits.h2.attr('class', digit_to_name[hours[1]]);
@@ -159,9 +138,33 @@ class DigitalClock{
 
         // Switch the theme
 
-        $('a.button').click(function(){
+        $('a.button').click(function () {
             clock.toggleClass('light dark');
         });
+    }
+
+    /**
+     * Fill with zeros ('0') to begin of digits array if it had less of 2 digits (length === 1).
+     *
+     * Examples
+     *  - ['1'] => Return ['0', '1']
+     *  - ['8'] => Return ['0', '8']
+     *  - ['0', '1'] => Return ['0', '1'] (Without modifications).
+     *  - ['2', '4'] => Return ['2', '4'] (Without modifications).
+     *
+     * @param digits {[string]} The digits are represent as a array of string.
+     * @return {[string]} The digits formalized.
+     */
+    static unshiftWithZeros(digits) {
+        // If exist only one (1) digit.
+        if (digits.length === 1) {
+            // Added a '0' to begin of array.
+            digits.unshift('0')
+            return digits;
+        } else {
+            // Return without changes.
+            return digits;
+        }
     }
 }
 
