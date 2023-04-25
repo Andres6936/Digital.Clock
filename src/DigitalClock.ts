@@ -65,7 +65,7 @@ export class DigitalClock extends LitElement {
         return html`
             ${this.getThemeStyle()}
             <div class="${this.theme}">
-                <digital-display></digital-display>
+                <digital-display theme="${this.theme}"></digital-display>
             </div>
         `;
     }

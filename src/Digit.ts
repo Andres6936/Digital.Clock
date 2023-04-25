@@ -21,12 +21,7 @@ class Digit extends LitElement {
         height:0;
         border:5px solid transparent;
     }
-    
-    div span {
-        background-color:#272e38;
-        border-color:#272e38;
-    }
-    
+
     div span{
         opacity:0;
         position:absolute;
@@ -149,8 +144,34 @@ class Digit extends LitElement {
     @property({type: String})
     type: string;
 
+    @property({type: String})
+    theme: string
+
+    getThemeStyle() {
+        if (this.theme === "dark") {
+            return html`
+                <style>
+                    div span {
+                        background-color: #cacaca;
+                        border-color: #cacaca;
+                    }
+                </style>
+            `
+        } else {
+            return html`
+                <style>
+                    div span {
+                        background-color: #272e38;
+                        border-color: #272e38;
+                    }
+                </style>
+            `
+        }
+    }
+
     render() {
         return html`
+            ${this.getThemeStyle()}
             <div class="${this.type}">
                 <span class="d1"></span>
                 <span class="d2"></span>

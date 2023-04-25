@@ -1,5 +1,5 @@
 import {LitElement, html} from 'lit';
-import {customElement, state} from 'lit/decorators.js';
+import {customElement, state, property} from 'lit/decorators.js';
 
 import './Dot.ts'
 import './Digit.ts'
@@ -23,6 +23,9 @@ class TableDigits extends LitElement {
     private slotSecond1 = "";
     @state()
     private slotSecond2 = "";
+
+    @property({type: String})
+    theme: string
 
     constructor() {
         super();
@@ -107,18 +110,18 @@ class TableDigits extends LitElement {
     render() {
         return html`
             <div class="digits">
-                <digital-digit type="${this.slotHour1}"></digital-digit>
-                <digital-digit type="${this.slotHour2}"></digital-digit>
+                <digital-digit type="${this.slotHour1}" theme="${this.theme}"></digital-digit>
+                <digital-digit type="${this.slotHour2}" theme="${this.theme}"></digital-digit>
 
                 <digital-dot></digital-dot>
 
-                <digital-digit type="${this.slotMinute1}"></digital-digit>
-                <digital-digit type="${this.slotMinute2}"></digital-digit>
+                <digital-digit type="${this.slotMinute1}" theme="${this.theme}"></digital-digit>
+                <digital-digit type="${this.slotMinute2}" theme="${this.theme}"></digital-digit>
 
                 <digital-dot></digital-dot>
 
-                <digital-digit type="${this.slotSecond1}"></digital-digit>
-                <digital-digit type="${this.slotSecond2}"></digital-digit>
+                <digital-digit type="${this.slotSecond1}" theme="${this.theme}"></digital-digit>
+                <digital-digit type="${this.slotSecond2}" theme="${this.theme}"></digital-digit>
             </div>
         `;
     }

@@ -1,13 +1,9 @@
 import {LitElement, css, html} from 'lit';
-import {customElement} from 'lit/decorators.js';
+import {customElement, property} from 'lit/decorators.js';
 
 @customElement('digital-alarm')
 class Alarm extends LitElement {
     static styles = css`
-    div {
-        background:url('/img/alarm_light.jpg');
-    }
-
     div {
         width:16px;
         height:16px;
@@ -22,8 +18,32 @@ class Alarm extends LitElement {
     }
     `
 
+    @property({type: String})
+    theme: string
+
+    getThemeStyle() {
+        if (this.theme === "dark") {
+            return html`
+                <style>
+                    div {
+                        background:url('/img/alarm_dark.jpg');
+                    }
+                </style>
+            `
+        } else {
+            return html`
+                <style>
+                    div {
+                        background: url('/img/alarm_light.jpg');
+                    }
+                </style>
+            `
+        }
+    }
+
     render() {
         return html`
+            ${this.getThemeStyle()}
             <div class="alarm"></div>
         `;
     }
