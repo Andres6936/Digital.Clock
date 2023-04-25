@@ -1,8 +1,20 @@
-import {LitElement, html, TemplateResult} from 'lit';
+import {LitElement, html, css, TemplateResult} from 'lit';
 import {customElement} from 'lit/decorators.js';
 
 @customElement('digital-digits')
 class Digits extends LitElement {
+    static styles = css`
+    .digits div span {
+        background-color:#272e38;
+        border-color:#272e38;
+    }
+
+    .digits div.dots:before,
+    .digits div.dots:after{
+        background-color:#272e38;
+    }
+    `
+
     // @type {[string]} Positions for the hours, minutes, and seconds
     private readonly positions: string[] = [
         'h1', 'h2', ':', 'm1', 'm2', ':', 's1', 's2'
