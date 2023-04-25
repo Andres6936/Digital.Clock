@@ -39,7 +39,7 @@ export class DigitalClock extends LitElement {
     // Render the UI as a function of component state
     render() {
         return html`
-            <div id="clock" class="light">
+            <div class="light">
                 <digital-display></digital-display>
             </div>
         `;
