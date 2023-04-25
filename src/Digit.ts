@@ -1,5 +1,5 @@
 import {LitElement, html, css} from 'lit';
-import {customElement} from 'lit/decorators.js';
+import {customElement, property} from 'lit/decorators.js';
 
 @customElement('digital-digit')
 class Digit extends LitElement {
@@ -146,9 +146,12 @@ class Digit extends LitElement {
     }
     `
 
+    @property({type: String})
+    type: string;
+
     render() {
         return html`
-            <div class="zero">
+            <div class="${this.type}">
                 <span class="d1"></span>
                 <span class="d2"></span>
                 <span class="d3"></span>

@@ -107,14 +107,18 @@ class TableDigits extends LitElement {
     render() {
         return html`
             <div class="digits">
-                <digital-digit></digital-digit>
-                <digital-digit></digital-digit>
+                <digital-digit type="${this.slotHour1}"></digital-digit>
+                <digital-digit type="${this.slotHour2}"></digital-digit>
+
                 <digital-dot></digital-dot>
-                <digital-digit></digital-digit>
-                <digital-digit></digital-digit>
+
+                <digital-digit type="${this.slotMinute1}"></digital-digit>
+                <digital-digit type="${this.slotMinute2}"></digital-digit>
+
                 <digital-dot></digital-dot>
-                <digital-digit></digital-digit>
-                <digital-digit></digital-digit>
+
+                <digital-digit type="${this.slotSecond1}"></digital-digit>
+                <digital-digit type="${this.slotSecond2}"></digital-digit>
             </div>
         `;
     }
