@@ -47,6 +47,7 @@ class Display extends LitElement {
 
     render() {
         return html`
+            ${this.getThemeStyle()}
             <div class="display">
                 <digital-weekdays></digital-weekdays>
                 <digital-ampm></digital-ampm>

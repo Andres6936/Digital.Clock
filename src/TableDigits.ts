@@ -113,12 +113,12 @@ class TableDigits extends LitElement {
                 <digital-digit type="${this.slotHour1}" theme="${this.theme}"></digital-digit>
                 <digital-digit type="${this.slotHour2}" theme="${this.theme}"></digital-digit>
 
-                <digital-dot></digital-dot>
+                <digital-dot theme="${this.theme}"></digital-dot>
 
                 <digital-digit type="${this.slotMinute1}" theme="${this.theme}"></digital-digit>
                 <digital-digit type="${this.slotMinute2}" theme="${this.theme}"></digital-digit>
 
-                <digital-dot></digital-dot>
+                <digital-dot theme="${this.theme}"></digital-dot>
 
                 <digital-digit type="${this.slotSecond1}" theme="${this.theme}"></digital-digit>
                 <digital-digit type="${this.slotSecond2}" theme="${this.theme}"></digital-digit>

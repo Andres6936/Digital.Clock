@@ -8,7 +8,6 @@ class Alarm extends LitElement {
         width:16px;
         height:16px;
         bottom:20px;
-        background:url('/img/alarm_light.jpg');
         position:absolute;
         opacity:0.2;
     }

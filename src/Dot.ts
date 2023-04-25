@@ -1,14 +1,9 @@
 import {LitElement, html, css} from 'lit';
-import {customElement} from 'lit/decorators.js';
+import {customElement, property} from 'lit/decorators.js';
 
 @customElement('digital-dot')
 class Dot extends LitElement {
     static styles = css`
-     div.dots:before,
-     div.dots:after{
-        background-color:#272e38;
-    }
-
      div {
         text-align:left;
         position:relative;
@@ -37,8 +32,34 @@ class Dot extends LitElement {
     }
     `
 
+    @property({type: String})
+    theme: string
+
+    getThemeStyle() {
+        if (this.theme === "dark") {
+            return html`
+                <style>
+                    div.dots:before,
+                    div.dots:after {
+                        background-color: #cacaca;
+                    }
+                </style>
+            `
+        } else {
+            return html`
+                <style>
+                    div.dots:before,
+                    div.dots:after {
+                        background-color: #272e38;
+                    }
+                </style>
+            `
+        }
+    }
+
     render() {
         return html`
+            ${this.getThemeStyle()}
             <div class="dots"></div>
         `;
     }
