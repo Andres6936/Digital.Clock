@@ -13,6 +13,33 @@ class Digits extends LitElement {
     .digits div.dots:after{
         background-color:#272e38;
     }
+
+    .digits div {
+        text-align:left;
+        position:relative;
+        width: 28px;
+        height:50px;
+        display:inline-block;
+        margin:0 4px;
+    }
+
+    .digits div span{
+        opacity:0;
+        position:absolute;
+
+        -webkit-transition:0.25s;
+        -moz-transition:0.25s;
+        transition:0.25s;
+    }
+
+    .digits div span:before,
+    .digits div span:after{
+        content:'';
+        position:absolute;
+        width:0;
+        height:0;
+        border:5px solid transparent;
+    }
     `
 
     // @type {[string]} Positions for the hours, minutes, and seconds
