@@ -4,7 +4,7 @@ import {customElement} from 'lit/decorators.js';
 import './Weekdays.ts'
 import './AmPm.ts'
 import './Alarm.ts'
-import './Digits.ts'
+import './TableDigits.ts'
 
 @customElement('digital-display')
 class Display extends LitElement {
@@ -29,7 +29,7 @@ class Display extends LitElement {
                 <digital-weekdays></digital-weekdays>
                 <digital-ampm></digital-ampm>
                 <digital-alarm></digital-alarm>
-                <digital-digits></digital-digits>
+                <digital-table-digits></digital-table-digits>
             </div>
         `;
     }

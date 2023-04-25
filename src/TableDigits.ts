@@ -1,8 +1,8 @@
 import {LitElement, html, css, TemplateResult} from 'lit';
 import {customElement, state} from 'lit/decorators.js';
 
-@customElement('digital-digits')
-class Digits extends LitElement {
+@customElement('digital-table-digits')
+class TableDigits extends LitElement {
     static styles = css`
     .digits div span {
         background-color:#272e38;
@@ -220,20 +220,20 @@ class Digits extends LitElement {
 
         // The format is HH
         let hoursFormat: [string, string?] = hours.toString().split('') as [string, string?];
-        hoursFormat = Digits.unshiftWithZeros(hoursFormat);
+        hoursFormat = TableDigits.unshiftWithZeros(hoursFormat);
 
         // The method getMinutes return an integer number, between 0 and 59,
         // representing the minutes in the given date according to local
         // time.
         // The format is MM.
         let minutes: [string, string?] = currentDate.getMinutes().toString().split('') as [string, string?];
-        minutes = Digits.unshiftWithZeros(minutes);
+        minutes = TableDigits.unshiftWithZeros(minutes);
 
         // The method getMinutes return an integer number, between 0 and 59,
         // representing the seconds in the given date according to local time.
         // The format is SS.
         let seconds: [string, string?] = currentDate.getSeconds().toString().split('') as [string, string?];
-        seconds = Digits.unshiftWithZeros(seconds);
+        seconds = TableDigits.unshiftWithZeros(seconds);
 
         this.slotHour1 = this.digit_to_name[hoursFormat[0]];
         this.slotHour2 = this.digit_to_name[hoursFormat[1]];
