@@ -1,5 +1,5 @@
-import {LitElement, css, html} from 'lit';
-import {customElement} from 'lit/decorators.js';
+import {LitElement, css, html, TemplateResult} from 'lit';
+import {customElement, property} from 'lit/decorators.js';
 
 import './Display.ts'
 
@@ -25,21 +25,46 @@ export class DigitalClock extends LitElement {
         bottom:2px;
         z-index:-1;
     }
-    
-    div.light {
-        background-color:#f3f3f3;
-        color:#272e38;
-    }
-    
-    div.light:after {
-        box-shadow:0 4px 10px rgba(0,0,0,0.15);
-    }
   `;
+
+    @property({type: String})
+    theme: string
+
+    getThemeStyle(): TemplateResult {
+        if (this.theme === "dark") {
+            return html`
+                <style>
+                    div.dark{
+                        background-color:#272e38;
+                        color:#cacaca;
+                    }
+
+                    div.dark:after{
+                        box-shadow:0 4px 10px rgba(0,0,0,0.3);
+                    }
+                </style>
+            `
+        } else {
+            return html`
+                <style>
+                    div.light {
+                        background-color:#f3f3f3;
+                        color:#272e38;
+                    }
+
+                    div.light:after {
+                        box-shadow:0 4px 10px rgba(0,0,0,0.15);
+                    }
+                </style>
+            `
+        }
+    }
 
     // Render the UI as a function of component state
     render() {
         return html`
-            <div class="light">
+            ${this.getThemeStyle()}
+            <div class="${this.theme}">
                 <digital-display></digital-display>
             </div>
         `;
