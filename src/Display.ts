@@ -16,6 +16,11 @@ class Display extends LitElement {
         position:relative;
         height: 54px;
     }
+
+    div {
+        background-color:#dddddd;
+        box-shadow:0 1px 1px rgba(0,0,0,0.08) inset, 0 1px 1px #fafafa;
+    }
     `
 
     render() {
