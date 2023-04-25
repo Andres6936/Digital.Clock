@@ -14,7 +14,9 @@ class AmPm extends LitElement {
 
     render() {
         return html`
-            <div class="ampm"></div>
+            <div class="ampm">
+                ${new Date().getHours() >= 12 ? 'PM' : 'AM'}
+            </div>
         `;
     }
 }

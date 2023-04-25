@@ -28,8 +28,15 @@ class Weekdays extends LitElement {
     private readonly weekdayNames: string[] = 'Sunday Monday Tuesday Wednesday Thursday Friday Saturday'.split(' ');
 
     getWeekdays() {
-        return this.weekdayNames.map(item => html`
-            <span>${item.substring(0, 3).toUpperCase()}</span>
+        // The method getDay() returns the day of the week for the
+        // specified date according to local time, where 0 represents
+        // Sunday, 1 for Monday, 2 for Tuesday, and so on.
+        const currentDate: Date = new Date();
+
+        // Mark the active day of the week and return a list of item to
+        // render with the weekdays.
+        return this.weekdayNames.map((item, index) => html`
+            <span class="${index === currentDate.getDay() ? 'active': ''}">${item.substring(0, 3).toUpperCase()}</span>
         `)
     }
 
