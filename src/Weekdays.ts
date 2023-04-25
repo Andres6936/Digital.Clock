@@ -23,9 +23,21 @@ class Weekdays extends LitElement {
     }
     `
 
+    // Store the days of week. Is important that the
+    // first day of week will be Sunday (Specified for Date.getDay()).
+    private readonly weekdayNames: string[] = 'Sunday Monday Tuesday Wednesday Thursday Friday Saturday'.split(' ');
+
+    getWeekdays() {
+        return this.weekdayNames.map(item => html`
+            <span>${item.substring(0, 3).toUpperCase()}</span>
+        `)
+    }
+
     render() {
         return html`
-            <div class="weekdays"></div>
+            <div class="weekdays">
+                ${this.getWeekdays()}
+            </div>
         `;
     }
 }
