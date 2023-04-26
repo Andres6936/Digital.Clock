@@ -1,6 +1,5 @@
 {
     "name": "@adan/digital-clock",
-    "private": true,
     "files": ["dist"],
     "module": "dist/digital-clock.js",
     "version": "2023.4.26",
