@@ -21,25 +21,20 @@ module specifier support in browsers.
 
 > npm install adan-digital-clock
 
-Using in the HTML
+Using in React
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>App</title>
-    <!-- Added the link to module of digital clock -->
-    <script type="module" src="node_modules/adan-digital-clock/dist/adan-digital-clock.js"></script>
-</head>
-<body>
-    <!-- Use the Lit element as a normal tag of HTML -->
-    <digital-clock theme="dark"></digital-clock>
-    <digital-clock theme="light"></digital-clock>
-</body>
-</html>
+```jsx
+import * as React from 'react';
+import 'adan-digital-clock'
+
+export default function App() {
+    return (
+    <div>
+        <digital-clock theme="light"></digital-clock>
+        <digital-clock theme="dark"></digital-clock>
+    </div>
+    );
+}
 ```
 
 Using in another Lit component
@@ -59,6 +54,27 @@ export class MyElement extends LitElement {
         `
     }
 }
+```
+
+Using in the HTML
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App</title>
+    <!-- Added the link to module of digital clock -->
+    <script type="module" src="node_modules/adan-digital-clock/dist/adan-digital-clock.js"></script>
+</head>
+<body>
+    <!-- Use the Lit element as a normal tag of HTML -->
+    <digital-clock theme="dark"></digital-clock>
+    <digital-clock theme="light"></digital-clock>
+</body>
+</html>
 ```
 
 Mock Design: [Lorenzo Buosi](https://dribbble.com/lorenzobuosi)
