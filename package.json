@@ -1,12 +1,13 @@
 {
     "name": "adan-digital-clock",
     "files": ["dist", "Readme.md"],
-    "module": "dist/digital-clock.js",
-    "version": "2023.4.26",
+    "module": "dist/adan-digital-clock.js",
+    "version": "2023.4.27",
     "type": "module",
+    "main": "dist/adan-digital-clock.js",
     "exports": {
         ".": {
-            "import": "./dist/digital-clock.js"
+            "import": "./dist/adan-digital-clock.js"
         }
     },
     "scripts": {
