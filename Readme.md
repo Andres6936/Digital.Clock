@@ -35,6 +35,7 @@ module specifier support in browsers.
 <body>
     <!-- Use the Lit element as a normal tag of HTML -->
     <digital-clock theme="dark"></digital-clock>
+    <digital-clock theme="light"></digital-clock>
 </body>
 </html>
 ```
