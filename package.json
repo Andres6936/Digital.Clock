@@ -1,6 +1,6 @@
 {
     "name": "@adan/digital-clock",
-    "files": ["dist"],
+    "files": ["dist", "Readme.md"],
     "module": "dist/digital-clock.js",
     "version": "2023.4.26",
     "type": "module",
