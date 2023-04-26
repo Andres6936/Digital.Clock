@@ -4,10 +4,12 @@ import {customElement, state, property} from 'lit/decorators.js';
 import './Dot.ts'
 import './Digit.ts'
 
+type NumberString = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+
 @customElement('digital-table-digits')
 class TableDigits extends LitElement {
     // Map digits to their names (this will be an array)
-    private readonly digit_to_name: Record<string, string> = 'zero one two three four five six seven eight nine'.split(' ');
+    private readonly digit_to_name: string[] = 'zero one two three four five six seven eight nine'.split(' ');
 
     @state()
     private slotHour1 = "";
@@ -54,30 +56,30 @@ class TableDigits extends LitElement {
         }
 
         // The format is HH
-        let hoursFormat: [string, string?] = hours.toString().split('') as [string, string?];
+        let hoursFormat: [NumberString, NumberString?] = hours.toString().split('') as [NumberString, NumberString?];
         hoursFormat = TableDigits.unshiftWithZeros(hoursFormat);
 
         // The method getMinutes return an integer number, between 0 and 59,
         // representing the minutes in the given date according to local
         // time.
         // The format is MM.
-        let minutes: [string, string?] = currentDate.getMinutes().toString().split('') as [string, string?];
+        let minutes: [NumberString, NumberString?] = currentDate.getMinutes().toString().split('') as [NumberString, NumberString?];
         minutes = TableDigits.unshiftWithZeros(minutes);
 
         // The method getMinutes return an integer number, between 0 and 59,
         // representing the seconds in the given date according to local time.
         // The format is SS.
-        let seconds: [string, string?] = currentDate.getSeconds().toString().split('') as [string, string?];
+        let seconds: [NumberString, NumberString?] = currentDate.getSeconds().toString().split('') as [NumberString, NumberString?];
         seconds = TableDigits.unshiftWithZeros(seconds);
 
         this.slotHour1 = this.digit_to_name[hoursFormat[0]];
-        this.slotHour2 = this.digit_to_name[hoursFormat[1]];
+        this.slotHour2 = this.digit_to_name[hoursFormat[1]!];
 
         this.slotMinute1 = this.digit_to_name[minutes[0]];
-        this.slotMinute2 = this.digit_to_name[minutes[1]];
+        this.slotMinute2 = this.digit_to_name[minutes[1]!];
 
         this.slotSecond1 = this.digit_to_name[seconds[0]];
-        this.slotSecond2 = this.digit_to_name[seconds[1]];
+        this.slotSecond2 = this.digit_to_name[seconds[1]!];
 
         // Schedule this function to be run again in 1 sec
         setTimeout(this.updateTime.bind(this), 1000);
@@ -95,16 +97,16 @@ class TableDigits extends LitElement {
      * @param digits {[string]} The digits are represent as a array of string.
      * @return {[string]} The digits formalized.
      */
-    private static unshiftWithZeros(digits: [string, string?]): [string, string] {
+    private static unshiftWithZeros(digits: [NumberString, NumberString?]): [NumberString, NumberString] {
         // If exist only one (1) digit.
         if (digits.length === 1) {
             // Added a '0' to begin of array.
             digits.unshift('0')
-            return digits as [string, string];
+            return digits as [NumberString, NumberString];
         }
 
         // Return without changes.
-        return digits as [string, string];
+        return digits as [NumberString, NumberString];
     }
 
     render() {
