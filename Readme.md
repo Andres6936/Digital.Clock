@@ -15,7 +15,7 @@ module specifier support in browsers.
 
 
 
-![Logo](./docs/mock/Timer.jpg)
+![Logo](https://raw.githubusercontent.com/Andres6936/Digital.Clock/master/docs/mock/Timer.jpg)
 
 Mock Design: [Lorenzo Buosi](https://dribbble.com/lorenzobuosi)
 
