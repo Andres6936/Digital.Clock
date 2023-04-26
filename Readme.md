@@ -21,6 +21,8 @@ module specifier support in browsers.
 
 > npm install adan-digital-clock
 
+Using in the HTML
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -38,6 +40,25 @@ module specifier support in browsers.
     <digital-clock theme="light"></digital-clock>
 </body>
 </html>
+```
+
+Using in another Lit component
+
+```javascript
+import { LitElement, html } from 'lit'
+import { customElement } from 'lit/decorators.js'
+
+import 'adan-digital-clock'
+
+@customElement('my-element')
+export class MyElement extends LitElement {
+    render() {
+        return html`
+        <digital-clock theme="light"></digital-clock>
+        <digital-clock theme="dark"></digital-clock>
+        `
+    }
+}
 ```
 
 Mock Design: [Lorenzo Buosi](https://dribbble.com/lorenzobuosi)
