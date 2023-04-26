@@ -142,10 +142,10 @@ class Digit extends LitElement {
     `
 
     @property({type: String})
-    type: string;
+    type!: string;
 
     @property({type: String})
-    theme: string
+    theme!: string
 
     getThemeStyle() {
         if (this.theme === "dark") {

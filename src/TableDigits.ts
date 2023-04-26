@@ -25,7 +25,7 @@ class TableDigits extends LitElement {
     private slotSecond2 = "";
 
     @property({type: String})
-    theme: string
+    theme!: string
 
     constructor() {
         super();

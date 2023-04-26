@@ -33,7 +33,7 @@ class Dot extends LitElement {
     `
 
     @property({type: String})
-    theme: string
+    theme!: string
 
     getThemeStyle() {
         if (this.theme === "dark") {

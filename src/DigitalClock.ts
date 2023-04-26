@@ -28,7 +28,7 @@ export class DigitalClock extends LitElement {
   `;
 
     @property({type: String})
-    theme: string
+    theme!: string
 
     getThemeStyle(): TemplateResult {
         if (this.theme === "dark") {
