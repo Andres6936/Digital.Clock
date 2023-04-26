@@ -17,6 +17,28 @@ module specifier support in browsers.
 
 ![Logo](https://raw.githubusercontent.com/Andres6936/Digital.Clock/master/docs/mock/Timer.jpg)
 
+### How to use
+
+> npm install adan-digital-clock
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App</title>
+    <!-- Added the link to module of digital clock -->
+    <script type="module" src="node_modules/adan-digital-clock/dist/adan-digital-clock.js"></script>
+</head>
+<body>
+    <!-- Use the Lit element as a normal tag of HTML -->
+    <digital-clock theme="dark"></digital-clock>
+</body>
+</html>
+```
+
 Mock Design: [Lorenzo Buosi](https://dribbble.com/lorenzobuosi)
 
 See [Page](https://dribbble.com/shots/1012575--Freebie-Timer)
