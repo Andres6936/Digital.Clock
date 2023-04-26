@@ -2,9 +2,13 @@
     "name": "adan-digital-clock",
     "files": ["dist", "Readme.md"],
     "module": "dist/adan-digital-clock.js",
-    "version": "2023.4.27",
+    "version": "2023.4.28",
     "type": "module",
     "main": "dist/adan-digital-clock.js",
+    "license": "MIT",
+    "author": "Joan Andrés",
+    "repository": "https://github.com/Andres6936/Digital.Clock",
+    "keywords": ["lit", "lit-element", "digital", "clock", "digital-clock"],
     "exports": {
         ".": {
             "import": "./dist/adan-digital-clock.js"
