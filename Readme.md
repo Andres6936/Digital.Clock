@@ -17,11 +17,18 @@ module specifier support in browsers.
 
 ![Logo](https://raw.githubusercontent.com/Andres6936/Digital.Clock/master/docs/mock/Timer.jpg)
 
-### How to use
-
+<details>
+    <summary>How to use</summary>
+    
+Install the package using npm:
+    
 > npm install adan-digital-clock
 
-Using in React
+Install the package using yarn:
+    
+> yarn add adan-digital-clock
+    
+Using the component with React:
 
 ```jsx
 import * as React from 'react';
@@ -37,7 +44,7 @@ export default function App() {
 }
 ```
 
-Using in another Lit component
+Using the component in another Lit component:
 
 ```javascript
 import { LitElement, html } from 'lit'
@@ -55,7 +62,6 @@ export class MyElement extends LitElement {
     }
 }
 ```
+</details>
 
-Mock Design: [Lorenzo Buosi](https://dribbble.com/lorenzobuosi)
-
-See [Page](https://dribbble.com/shots/1012575--Freebie-Timer)
+Mock Design by [Lorenzo Buosi](https://dribbble.com/lorenzobuosi), See screenshot of Mockup [Page](https://dribbble.com/shots/1012575--Freebie-Timer)
