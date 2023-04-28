@@ -83,7 +83,4 @@ Just import your element definition and use the element tag names in your templa
 
 ##
     
-<small>
-    Mock Design by [Lorenzo Buosi](https://dribbble.com/lorenzobuosi), 
-    See screenshot of Mockup [Page](https://dribbble.com/shots/1012575--Freebie-Timer)
-</small>
+###### Mock Design by [Lorenzo Buosi](https://dribbble.com/lorenzobuosi), See screenshot of Mockup [Page](https://dribbble.com/shots/1012575--Freebie-Timer)
