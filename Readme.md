@@ -18,17 +18,23 @@ module specifier support in browsers.
 ![Logo](https://raw.githubusercontent.com/Andres6936/Digital.Clock/master/docs/mock/Timer.jpg)
 
 <details>
-    <summary>How to use</summary>
+    <summary>How to use the Component</summary>
     
-Install the package using npm:
+Lit doesn't require any specialized tools, and Lit components work in any JavaScript framework
+or with any server templating system or CMS, so Lit is ideal for adding to existing projects
+and applications.
+    
+First, install the component from npm:
     
 > npm install adan-digital-clock
 
-Install the package using yarn:
+Or using the package with yarn:
     
 > yarn add adan-digital-clock
     
-Using the component with React:
+How you use a component depends on your project and the libraries or frameworks 
+it uses. You can use your component in HTML, with DOM APIs, or in template languages,
+for example with React:
 
 ```jsx
 import * as React from 'react';
@@ -44,12 +50,13 @@ export default function App() {
 }
 ```
 
-Using the component in another Lit component:
+You can create a new element anywhere in your project's sources:
 
 ```javascript
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
+// Import the package for use in the sources
 import 'adan-digital-clock'
 
 @customElement('my-element')
@@ -62,6 +69,12 @@ export class MyElement extends LitElement {
     }
 }
 ```
+    
+# Framework Templates
+    
+Most JavaScript frameworks have great support for web components and Lit. 
+Just import your element definition and use the element tag names in your templates.
+    
 </details>
 
 Mock Design by [Lorenzo Buosi](https://dribbble.com/lorenzobuosi), See screenshot of Mockup [Page](https://dribbble.com/shots/1012575--Freebie-Timer)
