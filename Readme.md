@@ -19,10 +19,14 @@ module specifier support in browsers.
 
 <details>
     <summary>How to use the Component</summary>
+
+##
     
+<p style="margin-top:3rem">
 Lit doesn't require any specialized tools, and Lit components work in any JavaScript framework
 or with any server templating system or CMS, so Lit is ideal for adding to existing projects
 and applications.
+</p>
     
 First, install the component from npm:
     
@@ -70,11 +74,16 @@ export class MyElement extends LitElement {
 }
 ```
     
-# Framework Templates
+### Framework Templates
     
 Most JavaScript frameworks have great support for web components and Lit. 
 Just import your element definition and use the element tag names in your templates.
     
 </details>
 
-Mock Design by [Lorenzo Buosi](https://dribbble.com/lorenzobuosi), See screenshot of Mockup [Page](https://dribbble.com/shots/1012575--Freebie-Timer)
+##
+    
+<small>
+    Mock Design by [Lorenzo Buosi](https://dribbble.com/lorenzobuosi), 
+    See screenshot of Mockup [Page](https://dribbble.com/shots/1012575--Freebie-Timer)
+</small>
