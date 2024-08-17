@@ -22,7 +22,6 @@ export class DigitalClock extends LitElement {
         div {
             width: 370px;
             padding: 40px;
-            margin: 100px auto 60px;
             position: relative;
             background-color: var(--theme-background-color);
             color: var(--theme-color);
