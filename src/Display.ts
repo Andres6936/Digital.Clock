@@ -35,7 +35,7 @@ class Display extends LitElement {
 
     render() {
         return html`
-            <div class="${"display " + this.theme}">
+            <div class="display ${this.theme}">
                 <digital-weekdays></digital-weekdays>
                 <digital-ampm></digital-ampm>
                 <digital-alarm></digital-alarm>
