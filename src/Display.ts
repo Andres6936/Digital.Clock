@@ -38,7 +38,7 @@ class Display extends LitElement {
             <div class="${"display " + this.theme}">
                 <digital-weekdays></digital-weekdays>
                 <digital-ampm></digital-ampm>
-                <digital-alarm theme="${this.theme}"></digital-alarm>
+                <digital-alarm></digital-alarm>
                 <digital-table-digits theme="${this.theme}"></digital-table-digits>
             </div>
         `;
