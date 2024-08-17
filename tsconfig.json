@@ -1,11 +1,11 @@
 {
     "compilerOptions": {
-        "target": "ES2019",
+        "target": "ES2022",
         "experimentalDecorators": true,
         "useDefineForClassFields": false,
-        "module": "ES2015",
+        "module": "ES2022",
         "lib": [
-            "ES2019",
+            "ES2022",
             "DOM"
         ],
         "skipLibCheck": true,
