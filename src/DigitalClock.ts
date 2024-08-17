@@ -7,63 +7,47 @@ import './Display.ts'
 export class DigitalClock extends LitElement {
     // Define scoped styles right with your component, in plain CSS
     static styles = css`
-    div {
-        width:370px;
-        padding:40px;
-        margin:100px auto 60px;
-        position:relative;
-    }
-    
-    div:after {
-        content:'';
-        position:absolute;
-        width:400px;
-        height:20px;
-        border-radius:100%;
-        left:50%;
-        margin-left:-200px;
-        bottom:2px;
-        z-index:-1;
-    }
-  `;
+        .light {
+            --theme-background-color: #f3f3f3;
+            --theme-color: #272e38;
+            --theme-box-shadow:0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .dark {
+            --theme-background-color: #272e38;
+            --theme-color: #cacaca;
+            --theme-box-shadow:0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        div {
+            width: 370px;
+            padding: 40px;
+            margin: 100px auto 60px;
+            position: relative;
+            background-color: var(--theme-background-color);
+            color: var(--theme-color);
+        }
+
+        div:after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 20px;
+            border-radius: 100%;
+            left: 50%;
+            margin-left: -200px;
+            bottom: 2px;
+            z-index: -1;
+            box-shadow: var(--theme-box-shadow);
+        }
+    `;
 
     @property({type: String})
     theme!: string
 
-    getThemeStyle(): TemplateResult {
-        if (this.theme === "dark") {
-            return html`
-                <style>
-                    div.dark{
-                        background-color:#272e38;
-                        color:#cacaca;
-                    }
-
-                    div.dark:after{
-                        box-shadow:0 4px 10px rgba(0,0,0,0.3);
-                    }
-                </style>
-            `
-        } else {
-            return html`
-                <style>
-                    div.light {
-                        background-color:#f3f3f3;
-                        color:#272e38;
-                    }
-
-                    div.light:after {
-                        box-shadow:0 4px 10px rgba(0,0,0,0.15);
-                    }
-                </style>
-            `
-        }
-    }
-
     // Render the UI as a function of component state
     render() {
         return html`
-            ${this.getThemeStyle()}
             <div class="${this.theme}">
                 <digital-display theme="${this.theme}"></digital-display>
             </div>
