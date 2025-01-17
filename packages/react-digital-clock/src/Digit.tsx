@@ -1,16 +1,6 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-    .light {
-        --theme-digit-background-color: #272e38;
-        --theme-digit-border-color: #272e38;
-    }
-
-    .dark {
-        --theme-digit-background-color: #cacaca;
-        --theme-digit-border-color: #cacaca;
-    }
-
     text-align: left;
     position: relative;
     width: 28px;
@@ -30,8 +20,8 @@ const Container = styled.div`
     span {
         opacity: 0;
         position: absolute;
-        background-color: var(--theme-digit-background-color);
-        border-color: var(--theme-digit-border-color);
+        background-color: light-dark(#272e38, #cacaca);
+        border-color: light-dark(#272e38, #cacaca);
 
         -webkit-transition: 0.25s;
         -moz-transition: 0.25s;
@@ -255,7 +245,7 @@ const Container = styled.div`
 
 export function Digit() {
     return (
-        <div className="zero light">
+        <div className="zero">
             <span className="d1"></span>
             <span className="d2"></span>
             <span className="d3"></span>
