@@ -1,0 +1,1 @@
+{"v":5,"entries":{"example-digitalclock--primary":{"type":"story","id":"example-digitalclock--primary","name":"Primary","title":"Example/DigitalClock","importPath":"./src/DigitalClock.stories.ts","componentPath":"./src/DigitalClock.tsx","tags":["dev","test"]}}}
