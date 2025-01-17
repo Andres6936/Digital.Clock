@@ -27,6 +27,7 @@
     "@rsbuild/plugin-react": "^1.1.0",
     "@rslib/core": "^0.2.2",
     "@storybook/addon-essentials": "^8.4.7",
+    "@storybook/test": "^8.5.0",
     "@types/react": "^18 || ^19",
     "react": "^18 || ^19",
     "storybook": "^8.4.7",
