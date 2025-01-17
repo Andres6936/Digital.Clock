@@ -45,9 +45,18 @@ export function Weekdays() {
     )
 }
 
+const AmPmContainer = styled.div`
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 12px;
+`
+
 export function AmPm() {
     return (
-        <div></div>
+        <AmPmContainer>
+            {new Date().getHours() >= 12 ? 'PM' : 'AM'}
+        </AmPmContainer>
     )
 }
 
