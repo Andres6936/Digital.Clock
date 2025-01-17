@@ -245,7 +245,7 @@ const Container = styled.div`
 
 export function Digit() {
     return (
-        <div className="zero">
+        <Container className="zero">
             <span className="d1"></span>
             <span className="d2"></span>
             <span className="d3"></span>
@@ -253,6 +253,6 @@ export function Digit() {
             <span className="d5"></span>
             <span className="d6"></span>
             <span className="d7"></span>
-        </div>
+        </Container>
     )
 }
