@@ -32,9 +32,9 @@ const unshiftWithZeros = (digits: [NumberString, NumberString?]): [NumberString,
 }
 
 export function TableDigits() {
-    const [slotHour, setSlotHour] = useState([]);
-    const [slotMinute, setSlotMinute] = useState([]);
-    const [slotSecond, setSlotSecond] = useState([]);
+    const [slotHour, setSlotHour] = useState(['zero', 'zero']);
+    const [slotMinute, setSlotMinute] = useState(['zero', 'zero']);
+    const [slotSecond, setSlotSecond] = useState(['zero', 'zero']);
 
     useEffect(() => {
         // Schedule this function to be run again in 1 sec
@@ -100,18 +100,18 @@ export function TableDigits() {
 
     return (
         <div>
-            <Digit/>
-            <Digit/>
+            <Digit type={slotHour[0]}/>
+            <Digit type={slotHour[1]}/>
 
             <Dot/>
 
-            <Digit/>
-            <Digit/>
+            <Digit type={slotMinute[0]}/>
+            <Digit type={slotMinute[1]}/>
 
             <Dot/>
 
-            <Digit/>
-            <Digit/>
+            <Digit type={slotSecond[0]}/>
+            <Digit type={slotSecond[1]}/>
         </div>
     )
 }
