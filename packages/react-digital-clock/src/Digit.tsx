@@ -18,8 +18,8 @@ const Container = styled.div`
     display: inline-block;
     margin: 0 4px;
 
-    & span:before,
-    & span:after {
+    span:before,
+    span:after {
         content: '';
         position: absolute;
         width: 0;
@@ -27,7 +27,7 @@ const Container = styled.div`
         border: 5px solid transparent;
     }
 
-    & span {
+    span {
         opacity: 0;
         position: absolute;
         background-color: var(--theme-digit-background-color);
