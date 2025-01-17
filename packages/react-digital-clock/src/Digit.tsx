@@ -255,7 +255,7 @@ const Container = styled.div`
 
 export function Digit() {
     return (
-        <div className="one light">
+        <div className="zero light">
             <span className="d1"></span>
             <span className="d2"></span>
             <span className="d3"></span>
