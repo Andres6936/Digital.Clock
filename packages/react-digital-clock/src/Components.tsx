@@ -31,7 +31,7 @@ const getWeekdays = () => {
     // Mark the active day of the week and return a list of item to
     // render with the weekdays.
     return weekdayNames.map((item, index) => (
-        <span className={index === currentDate.getDay() ? 'active' : ''}>
+        <span key={item} className={index === currentDate.getDay() ? 'active' : ''}>
             {item.substring(0, 3).toUpperCase()}
         </span>
     ))
