@@ -122,6 +122,6 @@ const DotContainer = styled.div`
 
 export function Dot () {
     return (
-        <DotContainer className="dots"/>
+        <DotContainer className="dots light"/>
     )
 }
