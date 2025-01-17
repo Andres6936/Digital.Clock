@@ -41,5 +41,8 @@
   "private": true,
   "dependencies": {
     "styled-components": "^6.1.14"
+  },
+  "overrides": {
+    "react-dom": "^19"
   }
 }
