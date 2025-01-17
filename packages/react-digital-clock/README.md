@@ -1,15 +1,12 @@
-# react-digital-clock
+## Monorepo Structure
 
-To install dependencies:
+This package is part of a monorepo. All commands, such as building or installing dependencies,
+should be executed from the root of the project to ensure proper functionality and
+dependency management.
 
-```bash
-bun install
-```
+## Optimized Bundle Size
 
-To run:
-
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.1.43. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+This library is specifically designed to generate code that is highly optimized to minimize the final
+bundle size. Files with the `.stories.ts` extension, which are used exclusively by Storybook for
+documentation and testing purposes, will be excluded from the final production bundle as they are
+not required for the application's functionality.
