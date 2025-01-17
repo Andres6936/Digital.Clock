@@ -85,14 +85,6 @@ export function Alarm() {
 }
 
 const DotContainer = styled.div`
-    .light {
-        --theme-dot-background-color: #272e38;
-    }
-
-    .dark {
-        --theme-dot-background-color: #cacaca;
-    }
-
     text-align: left;
     position: relative;
     width: 28px;
@@ -112,7 +104,7 @@ const DotContainer = styled.div`
         position: absolute;
         left: 0;
         top: 14px;
-        background-color: var(--theme-dot-background-color);
+        background-color: light-dark(#272e38, #cacaca);
     }
 
     &.dots:after {
@@ -122,6 +114,6 @@ const DotContainer = styled.div`
 
 export function Dot () {
     return (
-        <DotContainer className="dots light"/>
+        <DotContainer className="dots"/>
     )
 }
