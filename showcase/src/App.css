@@ -1,0 +1,13 @@
+html{
+    background-color: #dbe4e6;
+    overflow:hidden;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font:15px/1.3 Arial, sans-serif;
+    height: 100vh;
+}
