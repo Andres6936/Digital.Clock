@@ -1,5 +1,9 @@
+import {DigitalClock} from 'react-digital-clock'
+
 export default function App() {
     return (
-        <div>Hello</div>
+        <main>
+            <DigitalClock/>
+        </main>
     )
 }
