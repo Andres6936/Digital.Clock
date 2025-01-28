@@ -296,7 +296,7 @@
     &.zero .d7 {
         opacity: 1;
     }
-`;function u(e){let{type:t}=e;return(0,i.jsxs)(b,{className:t,children:[(0,i.jsx)("span",{className:"d1"}),(0,i.jsx)("span",{className:"d2"}),(0,i.jsx)("span",{className:"d3"}),(0,i.jsx)("span",{className:"d4"}),(0,i.jsx)("span",{className:"d5"}),(0,i.jsx)("span",{className:"d6"}),(0,i.jsx)("span",{className:"d7"})]})}u.__docgenInfo={description:"",methods:[],displayName:"Digit",props:{type:{required:!0,tsType:{name:"string"},description:""}}};let m="zero one two three four five six seven eight nine".split(" "),w=e=>(1===e.length&&e.unshift("0"),e);function y(){let[e,t]=(0,f.useState)(["zero","zero"]),[o,r]=(0,f.useState)(["zero","zero"]),[d,p]=(0,f.useState)(["zero","zero"]);(0,f.useEffect)(()=>{let e=setInterval(s,1e3);return()=>clearInterval(e)},[]);let s=()=>{let e=new Date,o=e.getHours();0==(o%=12)&&(o=12);let i=o.toString().split("");i=w(i);let d=e.getMinutes().toString().split("");d=w(d);let s=e.getSeconds().toString().split("");s=w(s),t([m[i[0]],m[i[1]]]),r([m[d[0]],m[d[1]]]),p([m[s[0]],m[s[1]]])};return(0,i.jsxs)("div",{children:[(0,i.jsx)(u,{type:e[0]}),(0,i.jsx)(u,{type:e[1]}),(0,i.jsx)(g,{}),(0,i.jsx)(u,{type:o[0]}),(0,i.jsx)(u,{type:o[1]}),(0,i.jsx)(g,{}),(0,i.jsx)(u,{type:d[0]}),(0,i.jsx)(u,{type:d[1]})]})}y.__docgenInfo={description:"",methods:[],displayName:"TableDigits"};let j=r.ZP.div`
+`;function m(e){let{type:t}=e;return(0,i.jsxs)(b,{className:t,children:[(0,i.jsx)("span",{className:"d1"}),(0,i.jsx)("span",{className:"d2"}),(0,i.jsx)("span",{className:"d3"}),(0,i.jsx)("span",{className:"d4"}),(0,i.jsx)("span",{className:"d5"}),(0,i.jsx)("span",{className:"d6"}),(0,i.jsx)("span",{className:"d7"})]})}m.__docgenInfo={description:"",methods:[],displayName:"Digit",props:{type:{required:!0,tsType:{name:"string"},description:""}}};let u="zero one two three four five six seven eight nine".split(" "),w=e=>(1===e.length&&e.unshift("0"),e);function y(){let[e,t]=(0,f.useState)(["zero","zero"]),[o,r]=(0,f.useState)(["zero","zero"]),[d,p]=(0,f.useState)(["zero","zero"]);(0,f.useEffect)(()=>{let e=setInterval(s,1e3);return()=>clearInterval(e)},[]);let s=()=>{let e=new Date,o=e.getHours();0==(o%=12)&&(o=12);let i=o.toString().split("");i=w(i);let d=e.getMinutes().toString().split("");d=w(d);let s=e.getSeconds().toString().split("");s=w(s),t([u[i[0]],u[i[1]]]),r([u[d[0]],u[d[1]]]),p([u[s[0]],u[s[1]]])};return(0,i.jsxs)("div",{children:[(0,i.jsx)(m,{type:e[0]}),(0,i.jsx)(m,{type:e[1]}),(0,i.jsx)(g,{}),(0,i.jsx)(m,{type:o[0]}),(0,i.jsx)(m,{type:o[1]}),(0,i.jsx)(g,{}),(0,i.jsx)(m,{type:d[0]}),(0,i.jsx)(m,{type:d[1]})]})}y.__docgenInfo={description:"",methods:[],displayName:"TableDigits"};let j=r.ZP.div`
     background-color: light-dark(#dddddd, #0f1620);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08) inset, 0 1px 1px ligth-dark(#fafafa, #2d3642);
     text-align: center;
@@ -323,5 +323,17 @@
         z-index: -1;
         box-shadow: 0 4px 10px light-dark(rgba(0,0,0,0.15), rgba(0,0,0,0.3));
     }
+    
+    @media (prefers-color-scheme: dark) {
+        & {
+            color-scheme: dark;
+        }
+    }
+    
+    @media (prefers-color-scheme: light) {
+        & {
+            color-scheme: light;
+        }
+    }
 `;function _(e){let{}=e;return(0,i.jsx)(k,{children:(0,i.jsx)(v,{})})}_.__docgenInfo={description:"",methods:[],displayName:"DigitalClock"};let z={title:"Example/DigitalClock",component:_},N={args:{}},P=["Primary"];N.parameters={...N.parameters,docs:{...N.parameters?.docs,source:{originalSource:"{\n  args: {} satisfies Props\n}",...N.parameters?.docs?.source}}}}}]);
-//# sourceMappingURL=DigitalClock-stories.5ced5635.iframe.bundle.js.map
+//# sourceMappingURL=DigitalClock-stories.b96be106.iframe.bundle.js.map
