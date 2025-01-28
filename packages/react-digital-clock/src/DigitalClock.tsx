@@ -20,6 +20,18 @@ const Container = styled.div`
         z-index: -1;
         box-shadow: 0 4px 10px light-dark(rgba(0,0,0,0.15), rgba(0,0,0,0.3));
     }
+    
+    @media (prefers-color-scheme: dark) {
+        & {
+            color-scheme: dark;
+        }
+    }
+    
+    @media (prefers-color-scheme: light) {
+        & {
+            color-scheme: light;
+        }
+    }
 `
 
 export type Props = {}
